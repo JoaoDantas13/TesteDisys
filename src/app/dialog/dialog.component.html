@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Cadastrar Usuario</h1>
+<div class="loading">
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+<div mat-dialog-content>
+  <form [formGroup]="formulario">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Nome" formControlName="nome" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Sobre Nome</mat-label>
+      <input matInput placeholder="Sobre Nome" formControlName="sobrenome" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Idade</mat-label>
+      <input matInput placeholder="Idade" formControlName="idade" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Sexo</mat-label>
+      <mat-select placeholder="Sexo" formControlName="sexo">
+        <mat-option value="M">M</mat-option>
+        <mat-option value="F">F</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="cadastrarUsuario()"
+  >
+    {{ acaoBotao }}
+  </button>
+</div>
